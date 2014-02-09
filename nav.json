@@ -1,1 +1,1 @@
-[{"name":"echo.dart"}]
+[{"name":"echo","types":[{"name":"Echo","kind":"class","members":[{"kind":"method","noparams":true,"name":"someMethod"}]}]}]

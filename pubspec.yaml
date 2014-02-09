@@ -1,0 +1,6 @@
+name: echo
+version: 0.0.1
+author: Kazumasa Kohtaka <kkohtaka@gmail.com>
+dependencies:
+dev_dependencies:
+  hop: any

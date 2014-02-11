@@ -8,21 +8,31 @@ import 'dart:async';
 import 'dart:io';
 
 void main(List<String> args) {
-  addTask('analyze', createAnalyzerTask(_getLibs));
 
-  addTask('test', createUnitTestTask(test_runner.testCore));
+  // Add a task to execute dartanalyzer: the static analyzer.
+  // The task analyzes Dart files under `lib/` directory.
+  addTask('analyze', createAnalyzerTask(_expandDir('lib')));
 
-  addTask('docs', createDartDocTask(['lib/echo.dart'],
+  // Add a task to execute unit tests.
+  // The task starts `testCore()` function described in `../test/test_runner.dart`.
+  addTask('test', createUnitTestTask(test_runner.testCore,
+        timeout: new Duration(seconds: 10)));
+
+  // Add a task to generate documents for Dart files under `lib/` directory.
+  // The documents are checked into `gh-pages` branch.
+  addTask('docs', createDartDocTask(_expandDir('lib'),
         targetBranch: 'gh-pages',
         packageDir: 'packages/',
-        excludeLibs: [ 'meta/', 'metadata/' ],
         linkApi: true));
 
   runHop(args);
 }
 
-Future<List<String>> _getLibs() {
-  return new Directory('lib')
+/**
+ * Returns a list includeing Dart files under directory specified by an argument.
+ */
+Future<List<String>> _expandDir(String dirName) {
+  return new Directory(dirName)
     .list(recursive: true)
     .where((FileSystemEntity fse) =>
         fse is File && fse.path.endsWith('.dart'))

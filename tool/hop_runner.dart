@@ -33,7 +33,7 @@ void main(List<String> args) {
  */
 Future<List<String>> _expandDir(String dirName) {
   return new Directory(dirName)
-    .list(recursive: true)
+    .list(recursive: false)
     .where((FileSystemEntity fse) =>
         fse is File && fse.path.endsWith('.dart'))
     .map((File file) => file.path)

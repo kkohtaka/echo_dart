@@ -1,1 +1,1 @@
-[{"name":"echo","types":[{"name":"Echo","kind":"class","members":[{"kind":"method","noparams":true,"name":"someMethod"}]}]}]
+[{"name":"echo","types":[{"name":"EchoServer","kind":"class","members":[{"kind":"method","name":"bind"},{"kind":"method","noparams":true,"name":"close"},{"kind":"method","name":"listen"}]}]}]

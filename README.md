@@ -2,7 +2,7 @@
 
 A simple tcp echo server written in Dart
 
-# Documentation
+## Documentation
 
 [http://kohtaka.org/echo/](http://kohtaka.org/echo/)
 

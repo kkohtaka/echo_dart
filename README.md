@@ -1,6 +1,8 @@
 # echo
 
-A simple tcp echo server written in Dart
+## A simple tcp echo server written in Dart
+
+[![Build Status](https://drone.io/github.com/kohtaka/echo/status.png)](https://drone.io/github.com/kohtaka/echo/latest)
 
 ## Documentation
 

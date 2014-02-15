@@ -1,3 +1,5 @@
 /pubspec.lock
+/docs
 packages
 .*.swp
+.DS_Store
